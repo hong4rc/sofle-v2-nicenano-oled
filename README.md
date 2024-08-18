@@ -7,10 +7,8 @@ The Ergomech Sofle V2 Wireless uses a Nice!Nano microcontroller and runs the ZMK
 ## Default keymap
 The default keymap of this keyboard can be found here:
 
-![image](https://github.com/user-attachments/assets/1b9fbeef-04aa-4edd-a0fd-4deca2539fa7)
-![image](https://github.com/user-attachments/assets/69c1f288-80af-45fc-9ced-01058c78ccc0)
-
-
+![image](https://github.com/user-attachments/assets/afc26147-a71a-46bb-aa79-f07a4895ccf9)
+![image](https://github.com/user-attachments/assets/d4d7114a-44d6-423a-9df8-709d9c0e35aa)
 
 
 ![Default Keymap](./sofle.svg)
