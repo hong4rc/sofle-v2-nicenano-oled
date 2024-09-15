@@ -6,12 +6,7 @@ The Ergomech Sofle V2 Wireless uses a Nice!Nano microcontroller and runs the ZMK
 
 ## Default keymap
 The default keymap of this keyboard can be found here:
-
-![image](https://github.com/user-attachments/assets/afc26147-a71a-46bb-aa79-f07a4895ccf9)
-![image](https://github.com/user-attachments/assets/d4d7114a-44d6-423a-9df8-709d9c0e35aa)
-
-
-![Default Keymap](./sofle.svg)
+![Default Keymap](./keymap-drawer/sofle.svg)
 
 ## Flashing the Sofle V2
 The ZMK cli tool would typically have you step through several questions to generate the necessary code to flash the firmware then upload it to a new repository on GitHub.
@@ -32,10 +27,10 @@ local directory. The extracted files will include:
 ### Flashing the keymap and firmware
 #### Steps to ensure successful flashing
 - Keep in mind that the power switch on the wireless Ergomech Sofle V2 is only **one** of the ways that the keyboard can be powered. The other way is to plug in the USB-C cable.
-When flashing one side of the keyboard, the other side must be off. 
-- The keyboard must be in bootloader mode to flash the firmware. To enter the bootloader mode, press the "BOOT" button twice in quick succession. 
-- If you are having trouble flashing, you can always flash the `settings_reset-nice_nano_v2-zmk.uf2` file first. This is a good way to make sure 
-that the keyboard is in a known state before flashing the firmware. The `reset` flash can be visually confirmed by the screen on the Nice!Nano microcontroller 
+When flashing one side of the keyboard, the other side must be off.
+- The keyboard must be in bootloader mode to flash the firmware. To enter the bootloader mode, press the "BOOT" button twice in quick succession.
+- If you are having trouble flashing, you can always flash the `settings_reset-nice_nano_v2-zmk.uf2` file first. This is a good way to make sure
+that the keyboard is in a known state before flashing the firmware. The `reset` flash can be visually confirmed by the screen on the Nice!Nano microcontroller
 not displaying anything after the flash is complete.
 
 #### Flashing Order
@@ -56,7 +51,7 @@ file (i.e. the right side with the `sofle_right-nice_nano_v2-zmk.uf2` file), you
 5. The keyboard will automatically reboot and the new firmware will be flashed.
 
 **Note:** Some operating systems may show a failure when the keyboard reboots, or the USB drive may disappear. This is normal and the keyboard should be flashed successfully.
-The keyboard flashing has been confirmed to work successfully on Windows 10, and Linux. 
+The keyboard flashing has been confirmed to work successfully on Windows 10, and Linux.
 
 ## Modifying the keymap
 
@@ -72,7 +67,7 @@ ZMK does provide an online [keymap editor](https://nickcoutsos.github.io/keymap-
 
 #### Modifying the keymap manually
 The exact spacing doesn't matter, but keeping the indentation consistent can be helpful for reading your keymap files. If you indent each button it will be easier
-to confirm the structure of the keymap. Take a look at the [default keymap](config/sofle.keymap) to see how this was done. 
+to confirm the structure of the keymap. Take a look at the [default keymap](config/sofle.keymap) to see how this was done.
 
 The Ergomech Sofle V2 has a 5 way switch on the right side keyboard. The location of the key presses on the 5 way switch are on the last line of the `bindings` section of each layer.
-As long as the correct number of entries exist on that row, the 5 way switch will work. 
+As long as the correct number of entries exist on that row, the 5 way switch will work.
