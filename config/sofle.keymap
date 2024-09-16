@@ -23,14 +23,6 @@
 
         main_win {
             label = "dvorak";
-
-            // ------------------------------------------------------------------------------------------------------------
-            // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   | BKSPC |
-            // |  ESC  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   | EQUAL |
-            // |  TAB  |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-            // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  |       |  N   |  M    |  ,    |  .   |   /   | MINUS |
-            //               | GUI | ALT  | CTRL | ENTER|  LOWER |  | RAISE | SPACE| CTRL  |  [    |  ]   |
-
             bindings = <
 &kp GRAVE       &kp N1            &kp N2     &kp N3    &kp N4     &kp N5                          &kp N6     &kp N7    &kp N8         &kp N9    &kp N0  &kp ESC
 &kp TAB         &kp SINGLE_QUOTE  &kp COMMA  &kp DOT   &kp P      &kp Y                           &kp F      &kp G     &kp C          &kp R     &kp L   &kp BACKSPACE
@@ -44,14 +36,6 @@
 
         qwerty_layer {
             label = "qwerty";
-
-            // ------------------------------------------------------------------------------------------------------------
-            // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   | BKSPC |
-            // |  ESC  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   | EQUAL |
-            // |  TAB  |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-            // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  |       |  N   |  M    |  ,    |  .   |   /   | MINUS |
-            //               | GUI | ALT  | CTRL | ENTER|  LOWER |  | RAISE | SPACE| CTRL  |  [    |  ]   |
-
             bindings = <
 &kp GRAVE  &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                          &kp N6     &kp N7     &kp N8         &kp N9         &kp N0    &kp BACKSLASH
 &kp ESC    &kp Q   &kp W     &kp E     &kp R      &kp T                           &kp Y      &kp U      &kp I          &kp O          &kp P     &kp BACKSPACE
@@ -80,15 +64,6 @@
 
         raise_layer {
             label = "raise";
-
-            // TODO: Some binds are waiting for shifted keycode support.
-            // ------------------------------------------------------------------------------------------------------------
-            // |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |  F11  |
-            // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |  F12  |
-            // |       |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   |   |
-            // |       |  =  |  -  |  +   |  {   |  }   |        |  |       |  [   |  ]    |  ;    |  :   |   \   |       |
-            //               |     |      |      |      |        |  |       |      |       |       |      |
-
             bindings = <
 &to 0   &kp F1  &kp F2           &kp F3           &kp F4           &kp F5                            &kp F6          &kp F7           &kp F8            &kp F9             &kp F10    &kp F11
 &to 1   &trans  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp LS(LG(F5))                    &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PLUS   &kp EQUAL
