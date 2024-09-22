@@ -1,5 +1,7 @@
 layout: {qmk_keyboard: sofle/rev1}
 layers:
+  colemak: ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', \, ESC, Q, W, F, P, G, J, L, U, Y, ;, BACKSPACE, TAB, A, R, S, T, D, H, N, E, I, O, '''', LSHIFT,
+    Z, X, C, V, B, MUTE, '', K, M, ',', ., /, RSHIFT, LGUI, LALT, LCTRL, SPACE, ENTER, raise, SPACE, RCTRL, RIGHT ALT, RIGHT GUI]
   dvorak_layout: ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', ESC, TAB, '''', ',', ., P, Y, F, G, C, R, L, BACKSPACE, LEFT SHIFT, A, O, E, U, I, D, H,
     T, N, S, RSHIFT, LCTRL, ;, Q, J, K, X, MUTE, '', B, M, W, V, Z, RCTRL, LGUI, LALT, LCTRL, SPACE, ENTER, raise, SPACE, RGUI, RIGHT ALT, /]
   qwerty: ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', \, ESC, Q, W, E, R, T, Y, U, I, O, P, BACKSPACE, TAB, A, S, D, F, G, H, J, K, L, ;, '''', LSHFT,
@@ -65,8 +67,6 @@ layers:
   - RGUI
   - {t: ▽, type: trans}
   - RCTRL
-  colemak: ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', \, ESC, Q, W, F, P, G, J, L, U, Y, ;, BACKSPACE, TAB, A, R, S, T, D, H, N, E, I, O, '''', LSHIFT,
-    Z, X, C, V, B, MUTE, '', K, M, ',', ., /, RSHIFT, LGUI, LALT, LCTRL, SPACE, ENTER, raise, SPACE, RCTRL, RIGHT ALT, RIGHT GUI]
   raise:
   - {t: dvorak_layout, h: toggle}
   - F1
@@ -82,9 +82,9 @@ layers:
   - F11
   - {t: qwerty, h: toggle}
   - {t: ▽, type: trans}
-  - KP 7
-  - KP 8
-  - KP 9
+  - '7'
+  - '8'
+  - '9'
   - Sft+Gui+ F5
   - '{'
   - '}'
@@ -94,9 +94,9 @@ layers:
   - '='
   - {t: mac, h: toggle}
   - {t: ▽, type: trans}
-  - KP 4
-  - KP 5
-  - KP 6
+  - '4'
+  - '5'
+  - '6'
   - Sft+Gui+ F6
   - LEFT
   - DOWN ARROW
@@ -106,15 +106,15 @@ layers:
   - _
   - {t: colemak, h: toggle}
   - {t: ▽, type: trans}
-  - KP 1
-  - KP 2
-  - KP 3
+  - '1'
+  - '2'
+  - '3'
   - Ctl+ B
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - \
-  - '|'
-  - PREVIOUS
+  - {t: ▽, type: trans}
+  - PREV
+  - PAUSE
   - NEXT
   - HOME
   - END
