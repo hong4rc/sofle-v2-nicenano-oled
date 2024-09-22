@@ -20,6 +20,21 @@
     keymap {
         compatible = "zmk,keymap";
 
+        colemak_layer {
+            label = "colemak";
+            bindings = <
+&kp GRAVE   &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                          &kp N6     &kp N7     &kp N8         &kp N9         &kp N0     &kp BSLH
+&kp ESC     &kp Q   &kp W     &kp F     &kp P      &kp G                           &kp J      &kp L      &kp U          &kp Y          &kp SEMI   &kp BACKSPACE
+&kp TAB     &kp A   &kp R     &kp S     &kp T      &kp D                           &kp H      &kp N      &kp E          &kp I          &kp O      &kp SQT
+&kp LSHIFT  &kp Z   &kp X     &kp C     &kp V      &kp B      &kp C_MUTE    &none  &kp K      &kp M      &kp COMMA      &kp DOT        &kp SLASH  &kp RSHIFT
+                    &kp LGUI  &kp LALT  &kp LCTRL  &kp SPACE  &kp ENTER     &mo 4  &kp SPACE  &kp RCTRL  &kp RIGHT_ALT  &kp RIGHT_GUI
+            >;
+
+            sensor-bindings =
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
+                <&inc_dec_kp PG_UP PG_DN>;
+        };
+
         dvorak_layout {
             label = "dvorak";
             bindings = <
@@ -61,29 +76,14 @@
                 <&inc_dec_kp PAGE_UP PAGE_DOWN>;
         };
 
-        colemak_layer {
-            label = "colemak";
-            bindings = <
-&kp GRAVE   &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                          &kp N6     &kp N7     &kp N8         &kp N9         &kp N0     &kp BSLH
-&kp ESC     &kp Q   &kp W     &kp F     &kp P      &kp G                           &kp J      &kp L      &kp U          &kp Y          &kp SEMI   &kp BACKSPACE
-&kp TAB     &kp A   &kp R     &kp S     &kp T      &kp D                           &kp H      &kp N      &kp E          &kp I          &kp O      &kp SQT
-&kp LSHIFT  &kp Z   &kp X     &kp C     &kp V      &kp B      &kp C_MUTE    &none  &kp K      &kp M      &kp COMMA      &kp DOT        &kp SLASH  &kp RSHIFT
-                    &kp LGUI  &kp LALT  &kp LCTRL  &kp SPACE  &kp ENTER     &mo 4  &kp SPACE  &kp RCTRL  &kp RIGHT_ALT  &kp RIGHT_GUI
-            >;
-
-            sensor-bindings =
-                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
-                <&inc_dec_kp PG_UP PG_DN>;
-        };
-
         raise_layer {
             label = "raise";
             bindings = <
-&to 0  &kp F1  &kp F2           &kp F3           &kp F4           &kp F5                            &kp F6          &kp F7           &kp F8            &kp F9             &kp F10    &kp F11
-&to 1  &trans  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp LS(LG(F5))                    &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PLUS   &kp EQUAL
-&to 2  &trans  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp LS(LG(F6))                    &kp LEFT        &kp DOWN_ARROW   &kp UP_ARROW      &kp RIGHT          &kp MINUS  &kp UNDER
-&to 3  &trans  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp LC(B)       &trans    &trans  &kp BSLH        &kp PIPE         &kp C_PREVIOUS    &kp C_NEXT         &kp HOME   &kp END
-               &trans           &trans           &trans           &trans          &trans    &trans  &trans          &trans           &trans            &trans
+&to 1  &kp F1  &kp F2        &kp F3        &kp F4        &kp F5                            &kp F6          &kp F7           &kp F8            &kp F9             &kp F10    &kp F11
+&to 2  &trans  &kp N7        &kp NUMBER_8  &kp N9        &kp LS(LG(F5))                    &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PLUS   &kp EQUAL
+&to 3  &trans  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp LS(LG(F6))                    &kp LEFT        &kp DOWN_ARROW   &kp UP_ARROW      &kp RIGHT          &kp MINUS  &kp UNDER
+&to 0  &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp LC(B)       &trans    &trans  &trans          &kp C_PREV       &kp C_PAUSE       &kp C_NEXT         &kp HOME   &kp END
+               &trans        &trans        &trans        &trans          &trans    &trans  &trans          &trans           &trans            &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
