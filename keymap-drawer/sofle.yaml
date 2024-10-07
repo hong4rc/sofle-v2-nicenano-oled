@@ -1,7 +1,7 @@
 layout: {qmk_keyboard: sofle/rev1}
 layers:
-  colemak: ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', \, ESC, Q, W, F, P, G, J, L, U, Y, ;, BACKSPACE, LSHIFT, A, R, S, T, D, H, N, E, I, O, RSHIFT,
-    TAB, Z, X, C, V, B, MUTE, '', K, M, ',', ., /, '''', LGUI, LEFT ALT, LCTRL, SPACE, ENTER, raise, SPACE, RCTRL, RIGHT ALT, RIGHT GUI]
+  colemak: ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', \, ESC, Q, W, F, P, G, J, L, U, Y, ;, BACKSPACE, TAB, A, R, S, T, D, H, N, E, I, O, '''', raise,
+    Z, X, C, V, B, MUTE, '', K, M, ',', ., /, RSHIFT, LGUI, LALT, LCTRL, SPACE, ENTER, LSHIFT, SPACE, RCTRL, RIGHT ALT, RIGHT GUI]
   dvorak_layout: ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', ESC, TAB, '''', ',', ., P, Y, F, G, C, R, L, BACKSPACE, LEFT SHIFT, A, O, E, U, I, D, H,
     T, N, S, RSHIFT, LCTRL, ;, Q, J, K, X, MUTE, '', B, M, W, V, Z, RCTRL, LGUI, LALT, LCTRL, SPACE, ENTER, raise, SPACE, RGUI, RIGHT ALT, /]
   qwerty: ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', \, ESC, Q, W, E, R, T, Y, U, I, O, P, BACKSPACE, TAB, A, S, D, F, G, H, J, K, L, ;, '''', LSHFT,
@@ -68,7 +68,7 @@ layers:
   - {t: ▽, type: trans}
   - RCTRL
   raise:
-  - {t: dvorak_layout, h: toggle}
+  - {t: colemak, h: toggle}
   - F1
   - F2
   - F3
@@ -86,12 +86,12 @@ layers:
   - '8'
   - '9'
   - Sft+Gui+ F5
-  - NEXT
   - '{'
   - '}'
   - '['
   - ']'
-  - DEL
+  - +
+  - '='
   - {t: mac, h: toggle}
   - {t: ▽, type: trans}
   - '4'
@@ -103,27 +103,27 @@ layers:
   - UP ARROW
   - RIGHT
   - '-'
-  - HOME
-  - {t: colemak, h: toggle}
-  - '0'
+  - _
+  - {type: held}
+  - {t: ▽, type: trans}
   - '1'
   - '2'
   - '3'
   - Ctl+ B
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - PREV
-  - '-'
-  - +
-  - '='
-  - _
+  - PAUSE
+  - NEXT
+  - HOME
   - END
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - UP
+  - DOWN
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
