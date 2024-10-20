@@ -1,7 +1,7 @@
 layout: {qmk_keyboard: sofle/rev1}
 layers:
-  colemak: ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', \, ESC, Q, W, F, P, G, J, L, U, Y, ;, BACKSPACE, TAB, A, R, S, T, D, H, N, E, I, O, '''', raise,
-    Z, X, C, V, B, MUTE, '', K, M, ',', ., /, RSHIFT, LGUI, LALT, LCTRL, SPACE, ENTER, LSHIFT, SPACE, RCTRL, RIGHT ALT, RIGHT GUI]
+  colemak: ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', \, ESC, Q, W, F, P, G, J, L, U, Y, ;, BACKSPACE, LEFT SHIFT, A, R, S, T, D, H, N, E, I, O, RSHIFT,
+    TAB, Z, X, C, V, B, MUTE, '', K, M, ',', ., /, '''', LGUI, LALT, LCTRL, SPACE, ENTER, raise, SPACE, RCTRL, RIGHT ALT, RIGHT GUI]
   qwerty: ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', \, ESC, Q, W, E, R, T, Y, U, I, O, P, BACKSPACE, TAB, A, S, D, F, G, H, J, K, L, ;, '''', LSHFT,
     Z, X, C, V, B, MUTE, '', N, M, ',', ., /, RIGHT SHIFT, LGUI, LALT, LCTRL, SPACE, ENTER, raise, SPACE, RCTRL, RIGHT ALT, RIGHT GUI]
   mac:
@@ -102,7 +102,7 @@ layers:
   - RIGHT
   - '-'
   - _
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '1'
   - '2'
@@ -121,7 +121,7 @@ layers:
   - {t: ▽, type: trans}
   - UP
   - DOWN
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
