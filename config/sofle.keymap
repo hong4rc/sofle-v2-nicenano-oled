@@ -75,5 +75,17 @@
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
+
+        gaming_layer {
+            bindings = <
+&trans      &trans      &trans        &trans  &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans      &kp Q         &kp W   &kp E   &kp R                           &trans  &trans  &trans  &trans  &trans  &trans
+&kp LSHIFT  &kp LSHIFT  &kp A         &kp S   &kp D   &kp F                           &trans  &trans  &trans  &trans  &trans  &trans
+&kp RCTRL   &kp RCTRL   &kp NUMBER_1  &kp NUMBER_2 &kp NUMBER_3  &kp NUMBER_4     &trans       &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans        &trans  &kp M   &kp SPACE  &kp ENTER    &trans  &trans  &trans  &trans  &trans
+            >;
+
+            label = "gaming";
+        };
     };
 };
