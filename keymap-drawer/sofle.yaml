@@ -1,72 +1,11 @@
-layout: {qmk_keyboard: sofle/rev1}
+layout: {zmk_keyboard: sofle}
 layers:
-  colemak: ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', \, ESC, Q, W, F, P, G, J, L, U, Y, ;, BACKSPACE, LEFT SHIFT, A, R, S, T, D, H, N, E, I, O, RSHIFT,
-    TAB, Z, X, C, V, B, MUTE, '', K, M, ',', ., /, '''', LGUI, LALT, LCTRL, SPACE, ENTER, raise, SPACE, RCTRL, RIGHT ALT, RIGHT GUI]
-  qwerty: ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', \, ESC, Q, W, E, R, T, Y, U, I, O, P, BACKSPACE, TAB, A, S, D, F, G, H, J, K, L, ;, '''', LSHFT,
-    Z, X, C, V, B, MUTE, '', N, M, ',', ., /, RIGHT SHIFT, LGUI, LALT, LCTRL, SPACE, ENTER, raise, SPACE, RCTRL, RIGHT ALT, RIGHT GUI]
-  mac:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - RCTRL
-  - {t: ▽, type: trans}
-  - LEFT GUI
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - RGUI
-  - {t: ▽, type: trans}
-  - RCTRL
+  colemak: ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', \, ESC, Q, W, F, P, G, J, L, U, Y, ;, BSPC, LSHFT, A, R, S, T, D, H, N, E, I, O, RSHFT, TAB, Z,
+    X, C, V, B, MUTE, '', K, M, ',', ., /, '''', LGUI, LALT, LCTRL, SPACE, ENTER, raise, SPACE, RCTRL, RALT, RGUI]
+  qwerty: ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', \, ESC, Q, W, E, R, T, Y, U, I, O, P, BSPC, LSHFT, A, S, D, F, G, H, J, K, L, ;, '''', TAB, Z, X,
+    C, V, B, MUTE, '', N, M, ',', ., /, RSHFT, LGUI, LALT, LCTRL, SPACE, ENTER, raise, SPACE, RCTRL, RALT, RGUI]
   raise:
-  - {t: colemak, h: toggle}
+  - F12
   - F1
   - F2
   - F3
@@ -78,111 +17,50 @@ layers:
   - F9
   - F10
   - F11
-  - {t: qwerty, h: toggle}
   - {t: ▽, type: trans}
-  - '7'
-  - '8'
-  - '9'
-  - Sft+Gui+ F5
+  - '!'
+  - '@'
+  - '#'
+  - $
+  - '%'
+  - ^
+  - '&'
+  - '*'
+  - (
+  - )
+  - DEL
+  - {t: ▽, type: trans}
+  - '~'
+  - '`'
   - '{'
   - '}'
-  - '['
-  - ']'
-  - +
-  - '='
-  - {t: mac, h: toggle}
-  - {t: ▽, type: trans}
-  - '4'
-  - '5'
-  - '6'
-  - Sft+Gui+ F6
+  - '|'
   - LEFT
-  - DOWN ARROW
-  - UP ARROW
+  - DOWN
+  - UP
   - RIGHT
   - '-'
-  - _
-  - {t: gaming, h: toggle}
+  - '='
   - {t: ▽, type: trans}
-  - '1'
-  - '2'
-  - '3'
-  - Ctl+ B
+  - {t: colemak, h: toggle}
+  - {t: qwerty, h: toggle}
+  - '['
+  - ']'
+  - \
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - PREV
-  - PAUSE
-  - NEXT
   - HOME
+  - PG DN
+  - PG UP
   - END
+  - _
+  - +
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - UP
-  - DOWN
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  gaming:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - T
-  - Q
-  - W
-  - E
-  - R
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - LSHIFT
-  - LSHIFT
-  - A
-  - S
-  - D
-  - F
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - RCTRL
-  - RCTRL
-  - '1'
-  - '2'
-  - '3'
-  - '4'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - M
-  - SPACE
-  - ENTER
-  - raise
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
