@@ -7,27 +7,22 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-#define BASE 0
-#define LOWER 1
-#define RAISE 2
-#define ADJUST 3
+#define COLEMAK 0
+#define QWERTY  1
+#define RAISE   2
 
 / {
-    // Activate ADJUST layer by pressing raise and lower
-
-    conditional_layers { compatible = "zmk,conditional-layers"; };
-
     keymap {
         compatible = "zmk,keymap";
 
         colemak_layer {
             label = "colemak";
             bindings = <
-&kp GRAVE       &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                          &kp N6     &kp N7     &kp N8         &kp N9         &kp N0     &kp BSLH
-&kp ESC         &kp Q   &kp W     &kp F     &kp P      &kp G                           &kp J      &kp L      &kp U          &kp Y          &kp SEMI   &kp BACKSPACE
-&kp LEFT_SHIFT  &kp A   &kp R     &kp S     &kp T      &kp D                           &kp H      &kp N      &kp E          &kp I          &kp O      &kp RSHIFT
-&kp TAB         &kp Z   &kp X     &kp C     &kp V      &kp B      &kp C_MUTE    &none  &kp K      &kp M      &kp COMMA      &kp DOT        &kp SLASH  &kp SQT
-                        &kp LGUI  &kp LALT  &kp LCTRL  &kp SPACE  &kp ENTER     &mo 3  &kp SPACE  &kp RCTRL  &kp RIGHT_ALT  &kp RIGHT_GUI
+&kp GRAVE  &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                          &kp N6      &kp N7     &kp N8     &kp N9     &kp N0    &kp BSLH
+&kp ESC    &kp Q   &kp W     &kp F     &kp P      &kp G                           &kp J       &kp L      &kp U      &kp Y      &kp SEMI  &kp BSPC
+&kp LSHFT  &kp A   &kp R     &kp S     &kp T      &kp D                           &kp H       &kp N      &kp E      &kp I      &kp O     &kp RSHFT
+&kp TAB    &kp Z   &kp X     &kp C     &kp V      &kp B      &kp C_MUTE   &none   &kp K       &kp M      &kp COMMA  &kp DOT    &kp FSLH  &kp SQT
+                   &kp LGUI  &kp LALT  &kp LCTRL  &kp SPACE  &kp ENTER    &mo RAISE &kp SPACE &kp RCTRL  &kp RALT   &kp RGUI
             >;
 
             sensor-bindings =
@@ -38,54 +33,31 @@
         qwerty_layer {
             label = "qwerty";
             bindings = <
-&kp GRAVE  &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                          &kp N6     &kp N7     &kp N8         &kp N9         &kp N0    &kp BACKSLASH
-&kp ESC    &kp Q   &kp W     &kp E     &kp R      &kp T                           &kp Y      &kp U      &kp I          &kp O          &kp P     &kp BACKSPACE
-&kp TAB    &kp A   &kp S     &kp D     &kp F      &kp G                           &kp H      &kp J      &kp K          &kp L          &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z   &kp X     &kp C     &kp V      &kp B      &kp C_MUTE    &none  &kp N      &kp M      &kp COMMA      &kp DOT        &kp FSLH  &kp RIGHT_SHIFT
-                   &kp LGUI  &kp LALT  &kp LCTRL  &kp SPACE  &kp ENTER     &mo 3  &kp SPACE  &kp RCTRL  &kp RIGHT_ALT  &kp RIGHT_GUI
+&kp GRAVE  &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                          &kp N6      &kp N7     &kp N8     &kp N9     &kp N0    &kp BSLH
+&kp ESC    &kp Q   &kp W     &kp E     &kp R      &kp T                           &kp Y       &kp U      &kp I      &kp O      &kp P     &kp BSPC
+&kp LSHFT  &kp A   &kp S     &kp D     &kp F      &kp G                           &kp H       &kp J      &kp K      &kp L      &kp SEMI  &kp SQT
+&kp TAB    &kp Z   &kp X     &kp C     &kp V      &kp B      &kp C_MUTE   &none   &kp N       &kp M      &kp COMMA  &kp DOT    &kp FSLH  &kp RSHFT
+                   &kp LGUI  &kp LALT  &kp LCTRL  &kp SPACE  &kp ENTER    &mo RAISE &kp SPACE &kp RCTRL  &kp RALT   &kp RGUI
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
-        };
-
-        mac_layer {
-            bindings = <
-&trans  &trans  &trans     &trans  &trans        &trans                    &trans  &trans    &trans  &trans     &trans  &trans
-&trans  &trans  &trans     &trans  &trans        &trans                    &trans  &trans    &trans  &trans     &trans  &trans
-&trans  &trans  &trans     &trans  &trans        &trans                    &trans  &trans    &trans  &trans     &trans  &trans
-&trans  &trans  &trans     &trans  &trans        &trans  &trans    &trans  &trans  &trans    &trans  &trans     &trans  &trans
-                &kp RCTRL  &trans  &kp LEFT_GUI  &trans  &trans    &trans  &trans  &kp RGUI  &trans  &kp RCTRL
-            >;
-
-            label = "macos";
             sensor-bindings =
-                <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>,
-                <&inc_dec_kp PAGE_UP PAGE_DOWN>;
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
+                <&inc_dec_kp PG_UP PG_DN>;
         };
 
         raise_layer {
             label = "raise";
             bindings = <
-&to 0  &kp F1  &kp F2        &kp F3        &kp F4        &kp F5                              &kp F6          &kp F7           &kp F8            &kp F9             &kp F10    &kp F11
-&to 1  &trans  &kp N7        &kp NUMBER_8  &kp N9        &kp LS(LG(F5))                      &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PLUS   &kp EQUAL
-&to 2  &trans  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp LS(LG(F6))                      &kp LEFT        &kp DOWN_ARROW   &kp UP_ARROW      &kp RIGHT          &kp MINUS  &kp UNDER
-&to 4  &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp LC(B)       &trans      &trans  &trans          &kp C_PREV       &kp C_PAUSE       &kp C_NEXT         &kp HOME   &kp END
-               &trans        &trans        &trans        &kp UP          &kp DOWN    &trans  &trans          &trans           &trans            &trans
+&kp F12    &kp F1     &kp F2     &kp F3     &kp F4     &kp F5                          &kp F6     &kp F7     &kp F8     &kp F9     &kp F10    &kp F11
+&trans     &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT                       &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR   &kp RPAR   &kp DEL
+&trans     &kp TILDE  &kp GRAVE  &kp LBRC   &kp RBRC   &kp PIPE                        &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &kp MINUS  &kp EQUAL
+&trans     &to 0      &to 1      &kp LBKT   &kp RBKT   &kp BSLH   &trans      &trans   &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &kp UNDER  &kp PLUS
+                      &trans     &trans     &trans     &trans     &trans      &trans   &trans     &trans     &trans     &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
-        };
-
-        gaming_layer {
-            bindings = <
-&trans      &trans      &trans        &trans        &trans        &trans                             &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &kp T       &kp Q         &kp W         &kp E         &kp R                              &trans  &trans  &trans  &trans  &trans  &trans
-&kp LSHIFT  &kp LSHIFT  &kp A         &kp S         &kp D         &kp F                              &trans  &trans  &trans  &trans  &trans  &trans
-&kp RCTRL   &kp RCTRL   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &trans       &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans        &trans        &kp M         &kp SPACE     &kp ENTER    &mo 3   &trans  &trans  &trans  &trans
-            >;
-
-            label = "gaming";
+            sensor-bindings =
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
+                <&inc_dec_kp PG_UP PG_DN>;
         };
     };
 };
