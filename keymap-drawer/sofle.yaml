@@ -1,9 +1,9 @@
 layout: {zmk_keyboard: sofle}
 layers:
   colemak: ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', \, ESC, Q, W, F, P, G, J, L, U, Y, ;, BSPC, LSHFT, A, R, S, T, D, H, N, E, I, O, RSHFT, TAB, Z,
-    X, C, V, B, MUTE, '', K, M, ',', ., /, '''', LGUI, LALT, LCTRL, SPACE, ENTER, raise, SPACE, RCTRL, RALT, RGUI]
+    X, C, V, B, '&tmx_zoom', '&tmx_copy', K, M, ',', ., /, '''', LGUI, LALT, LCTRL, SPACE, ENTER, raise, SPACE, RCTRL, RALT, RGUI]
   qwerty: ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', \, ESC, Q, W, E, R, T, Y, U, I, O, P, BSPC, LSHFT, A, S, D, F, G, H, J, K, L, ;, '''', TAB, Z, X,
-    C, V, B, MUTE, '', N, M, ',', ., /, RSHFT, LGUI, LALT, LCTRL, SPACE, ENTER, raise, SPACE, RCTRL, RALT, RGUI]
+    C, V, B, '&tmx_zoom', '&tmx_copy', N, M, ',', ., /, RSHFT, LGUI, LALT, LCTRL, SPACE, ENTER, raise, SPACE, RCTRL, RALT, RGUI]
   raise:
   - F12
   - F1
