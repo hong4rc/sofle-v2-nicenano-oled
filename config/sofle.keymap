@@ -76,86 +76,6 @@
             #sensor-binding-cells = <0>;
             bindings = <&tmx_pn>, <&tmx_pp>;
         };
-
-        /*
-         * Esc-or-Ctrl on the top-left key of the letter block.
-         * tap = ESC (vim-friendly), hold = LCTRL (Mac shortcuts).
-         * tapping-term 200 ms — comfortable for deliberate holds
-         * without triggering on fast ESC taps.
-         */
-        esc_ctrl: esc_or_ctrl {
-            compatible = "zmk,behavior-hold-tap";
-            label = "ESC_CTRL";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&kp>, <&kp>;
-        };
-
-        /*
-         * Layer-tap for the inner thumb keys.
-         * tap = key, hold = momentary layer.
-         * balanced flavor: hold fires if another key is pressed AND
-         * released while this key is held — works well for fast typists
-         * who roll thumb + letter quickly.
-         * 200 ms is the sweet spot: short enough that typing "space then
-         * letter" doesn't accidentally activate the layer, long enough
-         * that a deliberate hold is comfortable.
-         */
-        lth: layer_tap_hrt {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_HRT";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-            bindings = <&mo>, <&kp>;
-        };
-    };
-
-    /*
-     * Combos — all on adjacent home-row / upper-row keys.
-     * 35 ms timeout keeps misfire rate near zero for normal typing
-     * while still being reachable with a deliberate simultaneous press.
-     *
-     * Key positions (0-based, left-to-right, top-to-bottom):
-     *   Row 0 (number row):  0-11
-     *   Row 1 (QWERTY top):  12-23
-     *   Row 2 (home row):    24-35
-     *   Row 3 (bottom):      36-49  (36-41 left, 42-43 encoders, 44-49 right)
-     *   Row 4 (thumb):       50-59
-     *
-     * Left-half positions used here:
-     *   Q=13  W=14  E=15  R=16  T=17
-     *   A=25  S=26  D=27  F=28  G=29
-     *   Z=37  X=38  C=39  V=40  B=41
-     *
-     * Right-half:
-     *   Y=18  U=19  I=20  O=21  P=22
-     *   H=30  J=31  K=32  L=33  ;=34
-     */
-    combos {
-        compatible = "zmk,combos";
-
-        /* J+K → ESC — the canonical vim "exit insert mode" chord */
-        combo_jk_esc {
-            timeout-ms = <35>;
-            key-positions = <31 32>;
-            bindings = <&kp ESC>;
-        };
-
-        /* U+I → ( — left paren without leaving home position */
-        combo_ui_lpar {
-            timeout-ms = <35>;
-            key-positions = <19 20>;
-            bindings = <&kp LPAR>;
-        };
-
-        /* I+O → ) — matching right paren */
-        combo_io_rpar {
-            timeout-ms = <35>;
-            key-positions = <20 21>;
-            bindings = <&kp RPAR>;
-        };
     };
 
     keymap {
@@ -167,16 +87,13 @@
 /* ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮                     ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮ */
    &kp GRAVE   &kp N1     &kp N2     &kp N3     &kp N4     &kp N5                            &kp N6     &kp N7     &kp N8     &kp N9     &kp N0     &kp BSLH
 /* ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤                     ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤ */
-/* tap=ESC hold=LCTRL                                                                                                                                          */
-  &esc_ctrl LCTRL ESC   &kp Q      &kp W      &kp E      &kp R      &kp T                   &kp Y      &kp U      &kp I      &kp O      &kp P      &kp BSPC
+   &kp ESC    &kp Q      &kp W      &kp E      &kp R      &kp T                             &kp Y      &kp U      &kp I      &kp O      &kp P      &kp BSPC
 /* ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤                     ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤ */
    &kp LSHFT  &kp A      &kp S      &kp D      &kp F      &kp G                             &kp H      &kp J      &kp K      &kp L      &kp SEMI   &kp SQT
 /* ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────╮ ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤ */
    &kp TAB    &kp Z      &kp X      &kp C      &kp V      &kp B      &tmx_zoom    &tmx_copy  &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH   &kp RSHFT
 /* ╰──────────┴──────────┼──────────┼──────────┼──────────┼──────────┼──────────╯ ╰──────────┼──────────┼──────────┼──────────┼──────────┼──────────╯ */
-/*                                                         tap=SPC   tap=ENTER                tap=SPC                                                   */
-/*                                                         hold=RAISE hold=LOWER               hold=RAISE                                               */
-                          &kp LCTRL  &kp LALT   &kp LGUI  &lth RAISE SPACE  &lth LOWER ENTER  &lth RAISE SPACE  &mo LOWER  &kp RGUI   &kp RALT   &kp RCTRL
+                          &kp LCTRL  &kp LALT   &kp LGUI   &kp SPACE  &mo LOWER    &mo RAISE  &kp ENTER  &kp RGUI   &kp RALT   &kp RCTRL
 /* ╰──────────┴──────────┴──────────┴──────────╯                                              ╰──────────┴──────────┴──────────╯ */
             >;
 
