@@ -7,9 +7,8 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-#define COLEMAK 0
-#define QWERTY  1
-#define RAISE   2
+#define QWERTY 0
+#define RAISE  1
 
 #define TMUX_PREFIX LC(M)
 
@@ -81,40 +80,27 @@
     keymap {
         compatible = "zmk,keymap";
 
-        colemak_layer {
-            label = "colemak";
-            bindings = <
-&kp GRAVE  &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                          &kp N6     &kp N7     &kp N8     &kp N9     &kp N0    &kp BSLH
-&kp ESC    &kp Q   &kp W     &kp F     &kp P      &kp G                           &kp J      &kp L      &kp U      &kp Y      &kp SEMI  &kp BSPC
-&kp LSHFT  &kp A   &kp R     &kp S     &kp T      &kp D                           &kp H      &kp N      &kp E      &kp I      &kp O     &kp RSHFT
-&kp TAB    &kp Z   &kp X     &kp C     &kp V      &kp B      &tmx_zoom  &tmx_copy  &kp K      &kp M      &kp COMMA  &kp DOT    &kp FSLH  &kp SQT
-                   &kp LGUI  &kp LALT  &kp LCTRL  &kp SPACE  &kp ENTER  &mo RAISE  &kp SPACE  &kp RCTRL  &kp RALT   &kp RGUI
-            >;
-
-            sensor-bindings = <&enc_win>, <&enc_pane>;
-        };
-
         qwerty_layer {
-            label = "qwerty";
+            label = "QWERTY";
             bindings = <
-&kp GRAVE  &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                          &kp N6     &kp N7     &kp N8     &kp N9     &kp N0    &kp BSLH
-&kp ESC    &kp Q   &kp W     &kp E     &kp R      &kp T                           &kp Y      &kp U      &kp I      &kp O      &kp P     &kp BSPC
-&kp LSHFT  &kp A   &kp S     &kp D     &kp F      &kp G                           &kp H      &kp J      &kp K      &kp L      &kp SEMI  &kp SQT
-&kp TAB    &kp Z   &kp X     &kp C     &kp V      &kp B      &tmx_zoom  &tmx_copy  &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH  &kp RSHFT
-                   &kp LGUI  &kp LALT  &kp LCTRL  &kp SPACE  &kp ENTER  &mo RAISE  &kp SPACE  &kp RCTRL  &kp RALT   &kp RGUI
+&kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                           &kp N6     &kp N7    &kp N8     &kp N9    &kp N0    &kp BSLH
+&kp ESC    &kp Q     &kp W     &kp E     &kp R     &kp T                            &kp Y      &kp U     &kp I      &kp O     &kp P     &kp BSPC
+&kp LSHFT  &kp A     &kp S     &kp D     &kp F     &kp G                            &kp H      &kp J     &kp K      &kp L     &kp SEMI  &kp SQT
+&kp TAB    &kp Z     &kp X     &kp C     &kp V     &kp B     &tmx_zoom  &tmx_copy   &kp N      &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
+                     &kp LCTRL &kp LALT  &kp LGUI  &kp SPACE &kp ENTER  &mo RAISE   &kp SPACE  &kp RGUI  &kp RALT   &kp RCTRL
             >;
 
             sensor-bindings = <&enc_win>, <&enc_pane>;
         };
 
         raise_layer {
-            label = "raise";
+            label = "RAISE";
             bindings = <
-&kp F12    &kp F1     &kp F2     &kp F3     &kp F4     &kp F5                          &kp F6     &kp F7     &kp F8     &kp F9     &kp F10    &kp F11
-&trans     &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT                       &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR   &kp RPAR   &kp DEL
-&trans     &kp TILDE  &kp GRAVE  &kp LBRC   &kp RBRC   &kp PIPE                        &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &kp MINUS  &kp EQUAL
-&trans     &to 0      &to 1      &kp LBKT   &kp RBKT   &kp BSLH   &trans     &trans    &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &kp UNDER  &kp PLUS
-                      &trans     &trans     &trans     &trans     &trans     &trans    &trans     &trans     &trans     &trans
+&kp F12    &kp F1     &kp F2     &kp F3     &kp F4     &kp F5                         &kp F6     &kp F7     &kp F8     &kp F9     &kp F10    &kp F11
+&trans     &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT                      &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR   &kp RPAR   &kp DEL
+&trans     &kp TILDE  &kp GRAVE  &kp LBRC   &kp RBRC   &kp PIPE                       &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &kp MINUS  &kp EQUAL
+&trans     &to 0      &trans     &kp LBKT   &kp RBKT   &kp BSLH   &trans   &trans     &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &kp UNDER  &kp PLUS
+                      &trans     &trans     &trans     &trans     &trans   &trans      &trans     &trans     &trans     &trans
             >;
 
             sensor-bindings = <&enc_win>, <&enc_pane>;
