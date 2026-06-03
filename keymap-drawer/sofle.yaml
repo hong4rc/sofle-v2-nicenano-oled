@@ -1,7 +1,66 @@
 layout: {zmk_keyboard: sofle}
 layers:
-  QWERTY: ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', \, ESC, Q, W, E, R, T, Y, U, I, O, P, BSPC, LSHFT, A, S, D, F, G, H, J, K, L, ;, '''', TAB, Z,
-    X, C, V, B, '&tmx_zoom', '&tmx_copy', N, M, ',', ., /, RSHFT, LCTRL, LALT, '⌘ LGUI', SPACE, ENTER, raise, SPACE, '⌘ RGUI', RALT, RCTRL]
+  QWERTY:
+  - '`'
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - \
+  - {t: ESC, h: CTRL, type: held}
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - BSPC
+  - LSHFT
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - ;
+  - ''''
+  - TAB
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - '&tmx_zoom'
+  - '&tmx_copy'
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - RSHFT
+  - LCTRL
+  - LALT
+  - '⌘ LGUI'
+  - {t: SPC, h: RAISE, type: held}
+  - {t: ENT, h: LOWER, type: held}
+  - {t: SPC, h: RAISE, type: held}
+  - LOWER
+  - '⌘ RGUI'
+  - RALT
+  - RCTRL
   RAISE:
   - F12
   - F1
@@ -63,3 +122,73 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  LOWER:
+  - {t: ▽, type: trans}
+  - BRI-
+  - BRI+
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - MUTE
+  - VOL-
+  - VOL+
+  - PP
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - BSPC
+  - {t: ▽, type: trans}
+  - '!'
+  - '@'
+  - '#'
+  - $
+  - '%'
+  - ^
+  - '&'
+  - '*'
+  - (
+  - )
+  - '='
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '-'
+  - +
+  - '='
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - _
+  - '['
+  - ']'
+  - '{'
+  - '}'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+combos:
+  - key-positions: [31, 32]
+    key: ESC
+    layers: [QWERTY]
+  - key-positions: [19, 20]
+    key: (
+    layers: [QWERTY]
+  - key-positions: [20, 21]
+    key: )
+    layers: [QWERTY]
