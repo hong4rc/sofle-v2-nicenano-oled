@@ -1,9 +1,8 @@
 layout: {zmk_keyboard: sofle}
 layers:
-  QWERTY: ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', \, ESC, Q, W, E, R, T, Y, U, I, O, P, BSPC, LSHFT, A, S, D, F, G, H, J, K, L, ;, '''', TAB, Z, X,
-    C, V, B, '&tmx_zoom', '&tmx_copy', N, M, ',', ., /, RSHFT, LCTRL, LALT, LGUI, SPACE, LOWER, RAISE, ENTER, RGUI, RALT, RCTRL]
-  RAISE:
-  - F12
+  QWERTY: ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', \, TAB, Q, W, E, R, T, Y, U, I, O, P, BSPC, ESC, A, S, D, F, G, H, J, K, L, ;, '''', LSHFT, Z, X,
+    C, V, B, '&tmx_zoom', '&tmx_copy', N, M, ',', ., /, RSHFT, LCTRL, LALT, LGUI, SPACE, UPPER, UPPER, ENTER, RGUI, RALT, RCTRL]
+  UPPER:
   - F1
   - F2
   - F3
@@ -15,6 +14,7 @@ layers:
   - F9
   - F10
   - F11
+  - F12
   - {t: ▽, type: trans}
   - '!'
   - '@'
@@ -40,80 +40,19 @@ layers:
   - '-'
   - '='
   - {t: ▽, type: trans}
-  - {t: QWERTY, h: toggle}
-  - {t: ▽, type: trans}
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
   - '['
   - ']'
   - \
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - BT CLR
+  - PP
   - HOME
   - PG DN
   - PG UP
   - END
   - _
   - +
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  LOWER:
-  - {t: ▽, type: trans}
-  - BRI DN
-  - BRI UP
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - MUTE
-  - VOL DN
-  - VOL UP
-  - PP
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '1'
-  - '2'
-  - '3'
-  - '4'
-  - '5'
-  - '6'
-  - '7'
-  - '8'
-  - '9'
-  - '0'
-  - BSPC
-  - {t: ▽, type: trans}
-  - '!'
-  - '@'
-  - '#'
-  - $
-  - '%'
-  - ^
-  - '&'
-  - '*'
-  - (
-  - )
-  - '='
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '-'
-  - +
-  - '='
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - _
-  - '['
-  - ']'
-  - '{'
-  - '}'
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
